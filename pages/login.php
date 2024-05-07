@@ -19,13 +19,16 @@ if (isset($_POST['submit_login'])) {
 ?>
 
 <form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
-    <div class="mb-3">
-        <label for="login" class="form-label">Login : </label>
-        <input type="text" name="login" class="form-control" id="login">
+    <br>
+    <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="objet_login"><i class="bi bi-person-circle"></i></span>
+        <input type="text" class="form-control" placeholder="Login" name="login" id="login">
     </div>
-    <div class="mb-3">
-        <label for="password" class="form-label">Mot de passe : </label>
-        <input type="password" name="password" class="form-control" id="password">
+    <br>
+    <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="objet_password"><i class="bi bi-key-fill"></i></span>
+        <input type="password" class="form-control" placeholder="Password" name="password" id="password">
     </div>
-    <button type="submit" class="btn btn-primary" name="submit_login">Connexion</button>
+    <br>
+    <button type="submit" class="btn btn-outline-success" name="submit_login">Connexion</button>
 </form>

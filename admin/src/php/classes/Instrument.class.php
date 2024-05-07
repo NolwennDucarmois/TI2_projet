@@ -1,6 +1,6 @@
 <?php
 
-class Admin
+class Instrument
 {
     private $_attributs = array();
 
@@ -28,6 +28,7 @@ class Admin
         $this->_attributs[$champ] = $valeur;
     }
 }
+
 
 
 

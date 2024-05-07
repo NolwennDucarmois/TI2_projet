@@ -1,6 +1,6 @@
 <?php
 
-class Admin
+class Marque
 {
     private $_attributs = array();
 
@@ -28,6 +28,3 @@ class Admin
         $this->_attributs[$champ] = $valeur;
     }
 }
-
-
-

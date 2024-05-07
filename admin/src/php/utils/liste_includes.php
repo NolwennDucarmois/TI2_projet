@@ -1,7 +1,7 @@
 <?php
-if(file_exists('./lib/php/dbPgConnect.php')){
-    require 'lib/php/dbPgConnect.php';
-    require 'lib/php/classes/Autoloader.class.php';
+if(file_exists('./src/php/dbPgConnect.php')){
+    require 'src/php/dbPgConnect.php';
+    require 'src/php/classes/Autoloader.class.php';
     Autoloader::register();
     $cnx = Connexion::getInstance($dsn, $user, $password);
 } else {
