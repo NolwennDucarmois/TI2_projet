@@ -10,25 +10,6 @@ class InstrumentDB extends Instrument
         $this->_bd = $cnx;
     }
 
-    public function ajout_instru($reference, $nom, $couleur, $prix, $id_marque, $id_categorie)
-    {
-        try {
-            $query = "select ajout_instru(:reference,:nom,:couleur,:prix,:id_marque,:id_categorie)";
-            $res = $this->_bd->prepare($query);
-            $res->bindValue(':reference', $reference);
-            $res->bindValue(':nom', $nom);
-            $res->bindValue(':couleur', $couleur);
-            $res->bindValue(':prix', $prix);
-            $res->bindValue(':id_marque', $id_marque);
-            $res->bindValue(':id_categorie', $id_categorie);
-            $res->execute();
-            $data = $res->fetch();
-            return $data;
-        } catch (PDOException $e) {
-            print "Echec : " . $e->getMessage();
-        }
-    }
-
     public function getAllInstru()
     {
         $query = "select * from instrument order by nom_instrument";
@@ -80,12 +61,44 @@ class InstrumentDB extends Instrument
                     $_array[] = new Instrument($d);
                 }
                 return $_array;
-            } else {
+            } else{
                 return null;
             }
             return $data;
         } catch (PDOException $e) {
             print "Echec " . $e->getMessage();
+        }
+    }
+    public function ajout_instru($reference, $nom, $couleur, $prix, $id_marque, $id_categorie, $image)
+    {
+        try {
+            $query = "select ajout_instru(:reference,:nom,:couleur,:prix,:id_marque,:id_categorie,:image)";
+            $res = $this->_bd->prepare($query);
+            $res->bindValue(':reference', $reference);
+            $res->bindValue(':nom', $nom);
+            $res->bindValue(':couleur', $couleur);
+            $res->bindValue(':prix', $prix);
+            $res->bindValue(':id_marque', $id_marque);
+            $res->bindValue(':id_categorie', $id_categorie);
+            $res->bindValue(':image', $image);
+            $res->execute();
+            $data = $res->fetch();
+            return $data;
+        } catch (PDOException $e) {
+            print "Echec : " . $e->getMessage();
+        }
+    }
+    public function delete_instru($id){
+        $query = "select delete_instru(:id)";
+        try{
+            $this->_bd->beginTransaction();
+            $res = $this->_bd->prepare($query);
+            $res->bindValue(':id', $id);
+            $res->execute();
+            $this->_bd->commit();
+        }catch (PDOException $e){
+            $this->_bd->rollback();
+            print "Echec : " . $e->getMessage();
         }
     }
 }

@@ -39,7 +39,5 @@ require './src/php/utils/liste_includes.php';
         ?>
     </div>
 </div>
-
-
 </body>
 </html>

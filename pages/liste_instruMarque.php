@@ -17,7 +17,7 @@ $n = count($liste);
                                 print $liste[$i]->nom_marque;
                                 ?>
                             </span>
-                            <a href="index_.php?id_marque=<?php print $liste[$i]->id_marque;?>&page=instrumentsMarque.php"><i class="bi bi-box-arrow-up-right"></i></a>
+                            <a href="index_.php?id_marque=<?php print $liste[$i]->id_marque;?>&page=instrumentsMarque.php"><i class="bi bi-box-arrow-up-right" id="icon"></i></a>
                         </div>
                     </div>
                 </div>

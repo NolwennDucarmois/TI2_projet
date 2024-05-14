@@ -11,14 +11,14 @@ $n = count($liste);
                 ?>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="<?php print $liste[$i]->image_categorie ?>" alt="<?php print $liste[$i]->nom_categorie ?>" title="<?php print $liste[$i]->nom_categorie ?>" width="400px" height="350px">
+                        <img src="./admin/public/images/<?php print $liste[$i]->image_categorie ?>" alt="<?php print $liste[$i]->nom_categorie ?>" title="<?php print $liste[$i]->nom_categorie ?>" width="400px" height="350px">
                         <div class="card-body d-flex justify-content-between align-items-center">
                             <span class="card-text">
                                 <?php
                                 print $liste[$i]->nom_categorie;
                                 ?>
                             </span>
-                            <a href="index_.php?id_categorie=<?php print $liste[$i]->id_categorie;?>&page=instrumentsCategorie.php"><i class="bi bi-box-arrow-up-right"></i></a>
+                            <a href="index_.php?id_categorie=<?php print $liste[$i]->id_categorie;?>&page=instrumentsCategorie.php"><i class="bi bi-box-arrow-up-right" id="icon"></i></a>
                         </div>
                     </div>
                 </div>

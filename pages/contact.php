@@ -33,11 +33,11 @@
         <br>
         <div class="row">
             <div class="col-6">
-                <span id="mail_ent"><i class="bi bi-envelope-at-fill"></i> Email : </span>
+                <span id="mail_ent"><i class="bi bi-envelope-at-fill" id="icon"></i> Email : </span>
                 <span id="mail_ent_infos">mel.instruments@mail.com</span>
             </div>
             <div class="col-6">
-                <span id="tel_ent"><i class="bi bi-telephone-forward-fill"></i> Téléphone : </span>
+                <span id="tel_ent"><i class="bi bi-telephone-forward-fill" id="icon"></i> Téléphone : </span>
                 <span id="tel_ent_infos">069/85.36.12</span>
             </div>
         </div>

@@ -177,7 +177,8 @@ $(document).ready(function () {
         let prix = $('#prix').val();
         let id_marque = $('#id_marque').val();
         let id_categorie = $('#id_categorie').val();
-        let param = 'reference=' + reference + '&nom=' + nom + '&couleur=' + couleur + '&prix=' + prix + '&id_marque=' + id_marque + '&id_categorie=' + id_categorie;
+        let image = $('#image').val();
+        let param = 'reference=' + reference + '&nom=' + nom + '&couleur=' + couleur + '&prix=' + prix + '&id_marque=' + id_marque + '&id_categorie=' + id_categorie + '&image=' + image;
         let retour = $.ajax({
             type: 'get',
             dataType: 'json',
@@ -185,6 +186,35 @@ $(document).ready(function () {
             url: './src/php/ajax/ajaxAjoutInstrument.php',
             success: function (data) {//data = retour du # php
                 console.log(data);
+                // pour rediriger vers la page de gestion après l'ajout
+                window.location.href = 'index_.php?page=gestion_instruments.php';
+            },
+            error: function (data) {
+                console.log(data);
+                alert('Problème lors de l\'ajout');
+            }
+        });
+    });
+    $('#reset').click(function (){
+        window.location.href = 'index_.php?page=gestion_instruments.php';
+    });
+
+    $('.btn_delete').click(function () {
+        let id = $(this).data('id'); // récupère l'id grace à data-id
+        $(this).closest('tr').remove(); // supprime la ligne directement
+        let param = {id: id};
+        $.ajax({
+            type: 'get',
+            dataType: 'json',
+            data: param,
+            url: './src/php/ajax/ajaxDeleteInstrument.php',
+            success: function (data) {
+                console.log(data);
+                console.log('Instrument supprimé avec succès');
+            },
+            error: function (data) {
+                console.log(data);
+                alert('Problème lors de la suppression');
             }
         });
     });

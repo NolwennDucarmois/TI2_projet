@@ -21,12 +21,12 @@ if (isset($_POST['submit_login'])) {
 <form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
     <br>
     <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="objet_login"><i class="bi bi-person-circle"></i></span>
+        <span class="input-group-text" id="objet_login"><i class="bi bi-person-circle" id="icon"></i></span>
         <input type="text" class="form-control" placeholder="Login" name="login" id="login">
     </div>
     <br>
     <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="objet_password"><i class="bi bi-key-fill"></i></span>
+        <span class="input-group-text" id="objet_password"><i class="bi bi-key-fill" id="icon"></i></span>
         <input type="password" class="form-control" placeholder="Password" name="password" id="password">
     </div>
     <br>

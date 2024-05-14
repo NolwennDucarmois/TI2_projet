@@ -8,16 +8,13 @@
         <div class="collapse navbar-collapse" id="combinedNavbar">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index_.php?page=accueil_admin.php">Accueil <i class="bi bi-house"></i></a>
+                    <a class="nav-link active" aria-current="page" href="index_.php?page=accueil_admin.php">Accueil <i class="bi bi-house" id="icon"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=index_.php?page=ajout_instrument.php">Instruments <i class="bi bi-music-note-beamed"></i></a>
+                    <a class="nav-link" href="index_.php?page=gestion_instruments.php">Gestion <i class="bi bi-card-list" id="icon"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href=index_.php?page=gestion_instruments.php">Gestion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href=index_.php?page=deconnection.php">Déconnecion admin <i class="bi bi-person-gear"></i></a>
+                    <a class="nav-link" href="index_.php?page=deconnection.php">Déconnecion admin <i class="bi bi-person-gear" id="icon"></i></a>
                 </li>
             </ul>
         </div>

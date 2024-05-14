@@ -16,7 +16,7 @@ $n = count($liste);
                             <p class="card-text">
                                 <span><?php echo $liste[$i]->nom_instrument; ?></span>
                                 <p id="prix_instru"><?php echo $liste[$i]->prix_instrument; ?>€</p>
-                            <a href="index_.php?id_instrument=<?php print $liste[$i]->id_instrument;?>&page=infos_instrument.php"><i class="bi bi-info-square-fill" style="margin-left: 35px"></i></a>
+                            <a href="index_.php?id_instrument=<?php print $liste[$i]->id_instrument;?>&page=infos_instrument.php"><i class="bi bi-info-square-fill" style="margin-left: 35px" id="icon"></i></a>
                             </p>
                         </div>
                     </div>
