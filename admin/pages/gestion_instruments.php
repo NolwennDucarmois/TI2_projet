@@ -1,5 +1,6 @@
 <h2>Gestion des instruments</h2>
 <?php
+require 'src/php/utils/verifier_connexion.php';
 $instrus = new InstrumentDB($cnx);
 $liste = $instrus->getAllInstruments();
 $n = 0;
@@ -23,7 +24,8 @@ if ($liste == null) {
             <th>Marque</th>
             <th>Catégorie</th>
             <th>Image</th>
-            <th>Suppression</th>
+            <th>Modif</th>
+            <th>Supp</th>
         </tr>
         </thead>
         <tbody>
@@ -41,6 +43,9 @@ if ($liste == null) {
                 <td id="<?= $i->id_instrument; ?>">
                     <img src="./public/images/instruments/<?php echo $i->image_instrument; ?>"
                          alt="<?php echo $i->nom_instrument; ?>" id="table_img">
+                </td>
+                <td class="modif_td">
+                    <button data-id="<?= $i->id_instrument; ?>" class="btn btn_modif"><a href="index_.php?id_instrument=<?php print $i->id_instrument;?>&page=modif_instrument.php"><i class="bi bi-brush modif"></i></a></button>
                 </td>
                 <td class="delete_td">
                     <button data-id="<?= $i->id_instrument; ?>" class="btn btn_delete"><i class="bi bi-trash3-fill delete"></i></button>

@@ -87,13 +87,17 @@ h4 {
     max-height: 100px;
 }
 
-.delete_td {
+.delete_td, modif_td {
     text-align: center;
 }
 
 .delete {
     color: #732c2c;
     font-size: 1.8rem;
+}
+.modif{
+    font-size: 1.8rem;
+    color: black;
 }
 #aucun_instrument{
     font-size: 20px;

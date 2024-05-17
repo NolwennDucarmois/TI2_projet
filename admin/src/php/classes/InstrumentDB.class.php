@@ -61,7 +61,7 @@ class InstrumentDB extends Instrument
                     $_array[] = new Instrument($d);
                 }
                 return $_array;
-            } else{
+            } else {
                 return null;
             }
             return $data;
@@ -69,6 +69,7 @@ class InstrumentDB extends Instrument
             print "Echec " . $e->getMessage();
         }
     }
+
     public function ajout_instru($reference, $nom, $couleur, $prix, $id_marque, $id_categorie, $image)
     {
         try {
@@ -88,15 +89,34 @@ class InstrumentDB extends Instrument
             print "Echec : " . $e->getMessage();
         }
     }
-    public function delete_instru($id){
+
+    public function delete_instru($id)
+    {
         $query = "select delete_instru(:id)";
-        try{
+        try {
             $this->_bd->beginTransaction();
             $res = $this->_bd->prepare($query);
             $res->bindValue(':id', $id);
             $res->execute();
             $this->_bd->commit();
-        }catch (PDOException $e){
+        } catch (PDOException $e) {
+            $this->_bd->rollback();
+            print "Echec : " . $e->getMessage();
+        }
+    }
+
+    public function update_instru($id, $couleur, $prix)
+    {
+        $query = "select update_instru(:id, :couleur, :prix)";
+        try {
+            $this->_bd->beginTransaction();
+            $res = $this->_bd->prepare($query);
+            $res->bindValue(':id', $id);
+            $res->bindValue(':couleur', $couleur);
+            $res->bindValue(':prix', $prix);
+            $res->execute();
+            $this->_bd->commit();
+        } catch (PDOException $e) {
             $this->_bd->rollback();
             print "Echec : " . $e->getMessage();
         }

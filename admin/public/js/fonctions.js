@@ -186,6 +186,7 @@ $(document).ready(function () {
             url: './src/php/ajax/ajaxAjoutInstrument.php',
             success: function (data) {//data = retour du # php
                 console.log(data);
+                console.log('Instrument ajouté avec succès');
                 // pour rediriger vers la page de gestion après l'ajout
                 window.location.href = 'index_.php?page=gestion_instruments.php';
             },
@@ -195,7 +196,7 @@ $(document).ready(function () {
             }
         });
     });
-    $('#reset').click(function (){
+    $('#reset').click(function () {
         window.location.href = 'index_.php?page=gestion_instruments.php';
     });
 
@@ -203,7 +204,7 @@ $(document).ready(function () {
         let id = $(this).data('id'); // récupère l'id grace à data-id
         $(this).closest('tr').remove(); // supprime la ligne directement
         let param = {id: id};
-        $.ajax({
+        let retour = $.ajax({
             type: 'get',
             dataType: 'json',
             data: param,
@@ -215,6 +216,33 @@ $(document).ready(function () {
             error: function (data) {
                 console.log(data);
                 alert('Problème lors de la suppression');
+            }
+        });
+    });
+    $('#btn_modif').click(function (e) {
+        e.preventDefault()
+        let couleur = $('#couleur').val();
+        let prix = $('#prix').val();
+        let id = $('#id').val();
+        let param = {id: id, couleur: couleur, prix: prix};
+        console.log(param);
+        let retour = $.ajax({
+            type: 'get',
+            dataType: 'json',
+            data: param,
+            url: './src/php/ajax/ajaxUpdateInstrument.php',
+            success: function (data) {
+                console.log(data);
+                if (data.success) {
+                    console.log('Instrument modifié avec succès');
+                    window.location.href = 'index_.php?page=gestion_instruments.php';
+                } else {
+                    alert('Erreur lors de la modification: ' + data.message);
+                }
+            },
+            error: function (data) {
+                console.log(data);
+                alert('Problème lors de la modification');
             }
         });
     });

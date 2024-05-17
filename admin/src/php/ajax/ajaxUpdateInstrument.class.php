@@ -7,7 +7,7 @@ require '../classes/Instrument.class.php';
 require '../classes/InstrumentDB.class.php';
 $cnx = Connexion::getInstance($dsn, $user, $password);
 
-$instru = new InstrumentDB($cnx);
+$i = new InstrumentDB($cnx);
 
-$d[] = $instru->ajout_instru($_GET['reference'], $_GET['nom'], $_GET['couleur'], $_GET['prix'], $_GET['id_marque'], $_GET['id_categorie'], basename($_GET['image']));
-print json_encode($d);
+$data[] = $i->update_instru($_GET['id'], $_GET['couleur'], $_GET['prix']);
+print json_encode($data);

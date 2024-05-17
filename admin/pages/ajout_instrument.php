@@ -1,4 +1,5 @@
 <?php
+require 'src/php/utils/verifier_connexion.php';
 $marques = new MarqueDB($cnx);
 $listeM = $marques->getAllTous();
 $n = count($listeM);
