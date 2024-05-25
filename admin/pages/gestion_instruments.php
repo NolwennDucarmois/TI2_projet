@@ -45,10 +45,10 @@ if ($liste == null) {
                          alt="<?php echo $i->nom_instrument; ?>" id="table_img">
                 </td>
                 <td class="modif_td">
-                    <button data-id="<?= $i->id_instrument; ?>" class="btn btn_modif"><a href="index_.php?id_instrument=<?php print $i->id_instrument;?>&page=modif_instrument.php"><i class="bi bi-brush modif"></i></a></button>
+                    <button data-id="<?= $i->id_instrument; ?>" class="btn btn_modif" title="<?php print 'Modifier : '.$i->nom_instrument;?>"><a href="index_.php?id_instrument=<?php print $i->id_instrument;?>&page=modif_instrument.php"><i class="bi bi-brush modif"></i></a></button>
                 </td>
                 <td class="delete_td">
-                    <button data-id="<?= $i->id_instrument; ?>" class="btn btn_delete"><i class="bi bi-trash3-fill delete"></i></button>
+                    <button data-id="<?= $i->id_instrument; ?>" class="btn btn_delete" title="<?php print 'Supprimer : '.$i->nom_instrument;?>"><i class="bi bi-trash3-fill delete"></i></button>
                 </td>
             </tr>
             <?php

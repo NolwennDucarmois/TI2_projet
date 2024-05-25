@@ -8,7 +8,6 @@ if (isset($_POST['submit_login'])) {
         ?>
         <meta http-equiv="refresh" content="0;URL=admin/index_.php?page=accueil_admin.php">
         <?php
-
     } else {
         print "<br>Accès réservé aux administrateurs";
         ?>

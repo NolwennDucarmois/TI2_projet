@@ -1,4 +1,3 @@
-
 #icon {
     font-size: 1.5rem;
     color: #244645;
@@ -87,7 +86,7 @@ h4 {
     max-height: 100px;
 }
 
-.delete_td, modif_td {
+.delete_td, .modif_td {
     text-align: center;
 }
 

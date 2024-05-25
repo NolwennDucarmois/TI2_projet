@@ -233,12 +233,8 @@ $(document).ready(function () {
             url: './src/php/ajax/ajaxUpdateInstrument.php',
             success: function (data) {
                 console.log(data);
-                if (data.success) {
-                    console.log('Instrument modifié avec succès');
-                    window.location.href = 'index_.php?page=gestion_instruments.php';
-                } else {
-                    alert('Erreur lors de la modification: ' + data.message);
-                }
+                console.log('Instrument modifié avec succès');
+                window.location.href = 'index_.php?page=gestion_instruments.php';
             },
             error: function (data) {
                 console.log(data);

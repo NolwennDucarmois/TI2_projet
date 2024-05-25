@@ -11,7 +11,10 @@
                     <a class="nav-link active" aria-current="page" href="index_.php?page=accueil.php">Accueil <i class="bi bi-house" id="icon"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index_.php?page=liste_instru.php">Liste <i class="bi bi-list-ul" id="icon"></i></a>
+                    <a class="nav-link" href="index_.php?page=liste_instru.php">Nos Instruments <i class="bi bi-list-ul" id="icon"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index_.php?page=liste_instruCat.php">Catégorie <i class="bi bi-diagram-3" id="icon"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index_.php?page=contact.php">Contact <i class="bi bi-telephone" id="icon"></i></a>
