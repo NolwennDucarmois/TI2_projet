@@ -20,6 +20,9 @@
                     <a class="nav-link" href="index_.php?page=contact.php">Contact <i class="bi bi-telephone" id="icon"></i></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="index_.php?page=recherche.php">Recherche <i class="bi bi-search" id="icon"></i></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="index_.php?page=login.php">Connexion admin <i class="bi bi-person-gear" id="icon"></i></a>
                 </li>
             </ul>

@@ -121,4 +121,20 @@ class InstrumentDB extends Instrument
             print "Echec : " . $e->getMessage();
         }
     }
+
+    public function recherche($input)
+    {
+        $query = "SELECT * FROM instruments WHERE nom_instrument LIKE '{$input}%'"; // pour qu'il puisse comprendre des lettres après
+        $res = $this->_bd->prepare($query);
+        $res->execute(array(':input' => '%' . $input . '%')); // exécute la requete sql en liant input à la valeur
+
+        $count = $res->rowCount(); // Nombre de lignes retournées
+
+        if ($count > 0) {
+            $resultats = $res->fetchAll(PDO::FETCH_ASSOC); // pour récupérer toutes les lignes sous forme de tableau
+            return $resultats;
+        } else {
+            return false; // Aucun résultat trouvé
+        }
+    }
 }

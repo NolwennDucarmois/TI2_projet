@@ -248,4 +248,38 @@ $(document).ready(function () {
         let n = Math.floor(Math.random() * max) + 1;
         window.open('pages/partition/Partition' + n + '.pdf');
     })
+    // je me suis aider de cette vidéo :
+    // https://youtu.be/Yggrlux69MQ
+
+    // le keyup permet que des qu'aucune touche du clavier est activé, cela stocke la valeur pour la rechercher
+    $('#search').keyup(function () {
+        let input = $(this).val().trim();
+        //alert(input);
+        if (input !== "") {
+            $.ajax({
+                url: './admin/src/php/ajax/ajaxRecherche.php',
+                method: 'post',
+                data: {input: input},
+                success: function (data) {
+                    let res = $('#res');
+                    res.empty(); // suppression du contenu précédent
+                    if (data.hasOwnProperty('error')) { // vérifie si elle a une proproété nommé error
+                        res.html('<p>' + data.error + '</p>');
+                    } else {
+                        let html = '<ul>';
+                        $.each(data, function (index, instrument) {
+                            html += '<li>' + instrument.nom_instrument + '</li>';
+                        });
+                        html += '</ul>';
+                        res.html(html);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Erreur AJAX:', status, error);
+                }
+            });
+        } else {
+            $('#res').html(''); // Effacer le contenu si le champ de recherche est vide
+        }
+    });
 });
