@@ -1,1 +1,1 @@
-<h2>Erreur : page 404</h2>
+<img src="admin/public/images/page404.jpg" alt="Page404" id="page404">

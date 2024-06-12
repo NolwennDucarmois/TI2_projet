@@ -34,7 +34,7 @@ require './src/php/utils/liste_includes.php';
         if (file_exists($_SESSION['page'])) {
             include $_SESSION['page'];
         } else {
-            include '../pages/page404.php';
+            include './pages/page404.php';
         }
         ?>
     </div>

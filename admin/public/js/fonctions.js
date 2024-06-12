@@ -242,4 +242,10 @@ $(document).ready(function () {
             }
         });
     });
+    // affichage de la partition
+    $('#partition').click(function () {
+        let max = 5;
+        let n = Math.floor(Math.random() * max) + 1;
+        window.open('pages/partition/Partition' + n + '.pdf');
+    })
 });

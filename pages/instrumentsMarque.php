@@ -3,7 +3,7 @@ $c = new MarqueDB($cnx);
 $liste = $c->getInstrumentByIdMarque($_GET['id_marque']);
 $n = count($liste);
 ?>
-<a href="index_.php?page=liste_instru.php" class="link-opacity-50-hover"><i class="bi bi-box-arrow-in-left"></i> Retour</a>
+<a href="index_.php?page=liste_instru.php" class="link-opacity-50-hover"><i class="bi bi-box-arrow-in-left" id="icon"></i> Retour</a>
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
