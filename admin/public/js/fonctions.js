@@ -254,7 +254,7 @@ $(document).ready(function () {
     // le keyup permet que des qu'aucune touche du clavier est activé, cela stocke la valeur pour la rechercher
     $('#search').keyup(function () {
         let input = $(this).val().trim();
-        //alert(input);
+        console.log(input);
         if (input !== "") {
             $.ajax({
                 url: './admin/src/php/ajax/ajaxRecherche.php',
